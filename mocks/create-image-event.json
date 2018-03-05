@@ -1,0 +1,8 @@
+{
+  "body": "{\"blogId\":\"blog_id\", \"image\":\"image.jpg\"}",
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
+}
