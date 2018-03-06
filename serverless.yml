@@ -104,3 +104,27 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+
+  listBlogs:
+    handler: list-blogs.main
+    events:
+      - http:
+          path: blogs
+          method: get
+          cors: true
+
+  getBlog:
+    handler: get-blog.main
+    events:
+      - http:
+          path: blogs/{id}
+          method: get
+          cors: true
+
+  listBlogImages:
+    handler: list-blog-images.main
+    events:
+      - http:
+          path: images
+          method: get
+          cors: true
