@@ -91,13 +91,11 @@ var main = exports.main = function () {
         switch (_context.prev = _context.next) {
           case 0:
             params = {
-              TableName: "images",
-              Key: {
-                blogId: event.pathParameters.blogId
-                // 'Key' defines the partition key and sort key of the item to be retrieved
-                // - 'userId': Identity Pool identity id of the authenticated user
-                // - 'noteId': path parameter
-              } };
+              TableName: "categories"
+              // 'Key' defines the partition key and sort key of the item to be retrieved
+              // - 'userId': Identity Pool identity id of the authenticated user
+              // - 'noteId': path parameter
+            };
             _context.prev = 1;
             _context.next = 4;
             return dynamoDbLib.call("scan", params);
