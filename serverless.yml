@@ -123,6 +123,27 @@ functions:
           method: get
           cors: true
 
+  updateBlog:
+    handler: update-blog.main
+    events:
+      - http:
+          path: blogs/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+
+  deleteBlog:
+    # Defines an HTTP API endpoint that calls the main function in delete.js
+    # - path: url path is /notes/{id}
+    # - method: DELETE request
+    handler: delete-blog.main
+    events:
+      - http:
+          path: blogs/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
+
   listBlogImages:
     handler: list-blog-images.main
     events:
