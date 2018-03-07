@@ -54,7 +54,7 @@ functions:
           path: categories/{id}
           method: get
           cors: true
-          
+
   listCategories:
     # Defines an HTTP API endpoint that calls the main function in list.js
     # - path: url path is /notes
@@ -127,6 +127,6 @@ functions:
     handler: list-blog-images.main
     events:
       - http:
-          path: images
+          path: images/{blogId}
           method: get
           cors: true
