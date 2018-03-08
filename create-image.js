@@ -12,7 +12,8 @@ export async function main(event, context, callback) {
       createdAt: new Date().getTime(),
       smallImage: data.smallImage,
       mediumImage: data.mediumImage,
-      largeImage: data.largeImage
+      largeImage: data.largeImage,
+      isMainImage: data.isMainImage
     }
   };
 

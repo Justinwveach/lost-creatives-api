@@ -1,0 +1,6 @@
+{
+    "pathParameters": {
+        "summary": true,
+        "limit": 10
+    }
+}

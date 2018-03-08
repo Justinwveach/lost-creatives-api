@@ -1,5 +1,5 @@
 {
-  "body": "{\"categoryId\":\"Travel\",\"city\":\"Memphis\",\"state\":\"TN\",\"country\":\"USA\",\"title\":\"First Blog\",\"subtitle\":\"My subtitle\",\"content\":\"hello world. dis a blog.\",\"latitude\":\"32.9292929\",\"longitude\":\"32.9292929\"}",
+  "body": "{\"categoryId\":\"Travel\",\"city\":\"Memphis\",\"state\":\"TN\",\"country\":\"USA\",\"title\":\"First Blog\",\"subtitle\":\"My subtitle\",\"content\":\"hello world. dis a blog.\",\"latitude\":\"32.9292929\",\"longitude\":\"32.9292929\",\"images\":[],\"mainImage\":\"empty\"}",
   "requestContext": {
     "identity": {
       "cognitoIdentityId": "USER-SUB-1234"

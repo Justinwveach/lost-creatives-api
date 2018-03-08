@@ -115,6 +115,22 @@ functions:
           method: get
           cors: true
 
+  listBlogsNewest:
+    handler: list-blogs-newest.main
+    events:
+      - http:
+          path: blogs/newest/{summary}/{limit}
+          method: get
+          cors: true
+
+  listBlogsByCategory:
+    handler: list-blogs-by-category.main
+    events:
+      - http:
+          path: blogs/category/{category}
+          method: get
+          cors: true
+
   getBlog:
     handler: get-blog.main
     events:
@@ -149,5 +165,13 @@ functions:
     events:
       - http:
           path: images/{blogId}
+          method: get
+          cors: true
+
+  getMainImage:
+    handler: get-main-image.main
+    events:
+      - http:
+          path: images/main/{blogId}
           method: get
           cors: true
