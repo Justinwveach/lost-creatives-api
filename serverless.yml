@@ -84,7 +84,7 @@ functions:
           method: put
           cors: true
           authorizer: aws_iam
-          
+
   delete:
     # Defines an HTTP API endpoint that calls the main function in delete.js
     # - path: url path is /notes/{id}
@@ -136,6 +136,22 @@ functions:
     events:
       - http:
           path: blogs/category/{category}
+          method: get
+          cors: true
+
+  listBlogsByYear:
+    handler: list-blogs-by-date.main
+    events:
+      - http:
+          path: blogs/date/{year}
+          method: get
+          cors: true
+
+  listBlogsByMonth:
+    handler: list-blogs-by-date.main
+    events:
+      - http:
+          path: blogs/date/{year}/{month}
           method: get
           cors: true
 

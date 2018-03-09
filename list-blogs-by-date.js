@@ -2,30 +2,30 @@ import * as dynamoDbLib from "./libs/dynamodb-lib";
 import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context, callback) {
+
   const params = {
     TableName: `${process.env.TABLE_PREFIX}blogs`,
-//    ProjectionExpression: "blogId, title, subtitle",
+    ProjectionExpression: "blogId, title, subtitle",
     IndexName: "active-createdAt-index",
     KeyConditionExpression: "#active = :active",
     ExpressionAttributeNames: {
-      "#active": "active"
+      "#active": "active",
+      "#year": "year"
     },
     ExpressionAttributeValues: {
-      ":active": "x"
+      ":active": "x",
+      ":year": event.pathParameters.year
     },
     Limit: 100,
     ScanIndexForward: false
-    // 'Key' defines the partition key and sort key of the item to be retrieved
-    // - 'userId': Identity Pool identity id of the authenticated user
-    // - 'noteId': path parameter
   };
 
-  if (event.pathParameters.summary) {
-    params.ProjectionExpression = "blogId, title, subtitle";
-  }
-
-  if (event.pathParameters.limit) {
-    params.Limit = event.pathParameters.limit;
+  if (event.pathParameters.month) {
+    params.FilterExpression = "#year = :year and #month = :month";
+    params.ExpressionAttributeValues[":month"] = event.pathParameters.month,
+    params.ExpressionAttributeNames["#month"] = "month"
+  } else {
+    params.FilterExpression = "#year = :year"
   }
 
   try {
