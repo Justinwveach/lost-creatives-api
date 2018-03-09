@@ -3,7 +3,7 @@ import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context, callback) {
   const params = {
-    TableName: "blogs",
+    TableName: `${process.env.TABLE_PREFIX}blogs`,
     ProjectionExpression: "blogId, title, subtitle",
     IndexName : 'category-index',
     KeyConditionExpression : "category = :category",

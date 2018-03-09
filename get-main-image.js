@@ -3,7 +3,7 @@ import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context, callback) {
   const params = {
-    TableName: "images",
+    TableName: `${process.env.TABLE_PREFIX}images`,
     //FilterExpression: "isMainImage = :isMainImage",
     IndexName: "imageId",
     KeyConditionExpression: "#b = :blogId",

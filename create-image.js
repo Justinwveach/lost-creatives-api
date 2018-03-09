@@ -5,7 +5,7 @@ import { success, failure } from "./libs/response-lib";
 export async function main(event, context, callback) {
   const data = JSON.parse(event.body);
   const params = {
-    TableName: "images",
+    TableName: `${process.env.TABLE_PREFIX}images`,
     Item: {
       imageId: uuid.v1(),
       blogId: data.blogId,

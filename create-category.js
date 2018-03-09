@@ -5,10 +5,10 @@ import { success, failure } from "./libs/response-lib";
 export async function main(event, context, callback) {
   const data = JSON.parse(event.body);
   const params = {
-    TableName: "categories",
+    TableName: `${process.env.TABLE_PREFIX}categories`,
     Item: {
       categoryId: uuid.v1(),
-      content: data.content,
+      name: data.name,
       createdAt: new Date().getTime()
     }
   };

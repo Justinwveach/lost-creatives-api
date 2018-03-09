@@ -4,7 +4,7 @@ import { success, failure } from "./libs/response-lib";
 export async function main(event, context, callback) {
   const data = JSON.parse(event.body);
   const params = {
-    TableName: "blogs",
+    TableName: `${process.env.TABLE_PREFIX}blogs`,
     Key: {
       blogId: event.pathParameters.id
     }

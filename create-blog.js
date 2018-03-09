@@ -10,7 +10,7 @@ export async function main(event, context, callback) {
   const month = dateFormat(date, "m");
 
   const params = {
-    TableName: "blogs",
+    TableName: `${process.env.TABLE_PREFIX}blogs`,
     Item: {
       blogId: uuid.v1(),
       createdAt: date,

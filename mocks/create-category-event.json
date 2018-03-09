@@ -1,5 +1,5 @@
 {
-  "body": "{\"content\":\"hello world\"}",
+  "body": "{\"name\":\"hello world\"}",
   "requestContext": {
     "identity": {
       "cognitoIdentityId": "USER-SUB-1234"
