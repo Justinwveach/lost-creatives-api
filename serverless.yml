@@ -199,3 +199,19 @@ functions:
           path: images/main/{blogId}
           method: get
           cors: true
+
+  addNewsletterEmail:
+    handler: signup-newsletter.main
+    events:
+      - http:
+          path: newsletter/{email}
+          method: post
+          cors: true
+
+  removeNewsletterEmail:
+    handler: cancel-newsletter.main
+    events:
+      - http:
+          path: newsletter/{email}
+          method: delete
+          cors: true

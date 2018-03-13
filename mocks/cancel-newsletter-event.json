@@ -1,0 +1,6 @@
+{
+  "body": "{\"content\":\"\"}",
+  "pathParameters": {
+    "email": "test@example.com"
+  }
+}
